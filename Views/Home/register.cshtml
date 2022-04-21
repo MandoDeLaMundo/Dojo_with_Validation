@@ -1,0 +1,54 @@
+@using Dojo_Survey.Models
+@model User
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="~/css/style.css">
+</head>
+<body class="box">
+    <form asp-action="ProcessRegistration" asp-controller="Home" method="post">
+        <span asp-validation-for="NameField"></span>
+        <label asp-for="NameField"></label>
+        <input asp-for="NameField"/>
+        <br>
+
+        <span asp-validation-for="DojoField"></span>
+        <label asp-for="DojoField"></label>
+        <select asp-for = "DojoField">
+            <option value="">--Select A Location--</option>
+            <option value="San Jose">San Jose</option>
+            <option value="Sacramento">Sacramento</option>
+        </select>
+        <br>
+        
+        <span asp-validation-for="LanguageField"></span>
+        <label asp-for="LanguageField"></label>
+        <select asp-for = "LanguageField">
+            <option value="">--Select A Language--</option>
+            <option value="HTML">HTML</option>
+            <option value="Python">Python</option>
+            <option value="JavaScript">JavaScript</option>
+            <option value="CSS">CSS</option>
+            <option value="CSS">C#</option>
+        </select>
+    
+        <br>
+        <span asp-validation-for="CommentField"></span>
+        <label asp-for="CommentField"></label>
+    
+        <br>
+        <textarea asp-for="CommentField" id="" cols="30" rows="10"></textarea>
+    
+        <br>
+        <button>Submit</button>
+    </form>
+
+</body>
+</html>
